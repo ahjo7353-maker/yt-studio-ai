@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YT Studio AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SPLASH -->
+  <div id="splash">
+    <div class="splash-logo">▶</div>
+    <h1>YT STUDIO <span>AI</span></h1>
+    <p>Creator Intelligence Platform</p>
+
+    <div class="loader">
+      <div class="loader-bar"></div>
+    </div>
+
+    <small id="loadingText">Initialisation...</small>
+  </div>
+
+
+  <!-- LOGIN -->
+  <div id="loginScreen">
+    <div class="login-box">
+
+      <div class="login-logo">▶</div>
+
+      <h1>YT Studio <span>AI</span></h1>
+
+      <p>
+        Crée. Analyse. Développe ta chaîne.<br>
+        Tout depuis un seul endroit.
+      </p>
+
+      <button id="googleLogin">
+        <span class="google-icon">G</span>
+        Continuer avec Google
+      </button>
+
+      <small>🔒 Connexion sécurisée avec Google</small>
+
+    </div>
+  </div>
+
+
+  <!-- APP -->
+  <div id="app">
+
+    <aside>
+
+      <div class="brand">
+        <div class="brand-logo">▶</div>
+
+        <div>
+          <strong>YT Studio</strong>
+          <span>AI Workspace</span>
+        </div>
+      </div>
+
+
+      <div class="menu-title">STUDIO</div>
+
+      <nav>
+        <button class="nav active" data-page="dashboard">🏠 <span>Dashboard</span></button>
+        <button class="nav" data-page="ideas">✦ <span>Idées IA</span></button>
+        <button class="nav" data-page="scripts">🎬 <span>Scripts</span></button>
+        <button class="nav" data-page="edits">✂️ <span>Edits</span></button>
+        <button class="nav" data-page="thumbnails">🖼️ <span>Miniatures</span></button>
+      </nav>
+
+
+      <div class="menu-title second">CHAÎNE</div>
+
+      <nav>
+        <button class="nav" data-page="analytics">📊 <span>Analytics</span></button>
+        <button class="nav" data-page="videos">▶ <span>Mes vidéos</span></button>
+        <button class="nav" data-page="projects">📁 <span>Projets</span></button>
+      </nav>
+
+
+      <div class="sidebar-bottom">
+
+        <button class="nav" data-page="settings">
+          ⚙️ <span>Paramètres</span>
+        </button>
+
+        <button class="account-button" data-page="account">
+
+          <div class="avatar" id="sidebarAvatar">C</div>
+
+          <div class="account-info">
+            <strong id="sidebarName">Creator</strong>
+            <span>Mon compte</span>
+          </div>
+
+          <div class="account-arrow">›</div>
+
+        </button>
+
+      </div>
+
+    </aside>
+
+
+    <main>
+
+      <!-- DASHBOARD -->
+      <section id="dashboard" class="page active-page">
+
+        <header>
+
+          <div>
+            <span class="eyebrow">CREATOR WORKSPACE</span>
+
+            <h1>
+              Bonjour <span id="helloName">Creator</span> 👋
+            </h1>
+
+            <p>Prêt à créer quelque chose aujourd'hui ?</p>
+          </div>
+
+          <div class="header-actions">
+            <button class="icon-button">🔔</button>
+            <button class="white-button" data-open="projects">
+              + Nouveau projet
+            </button>
+          </div>
+
+        </header>
+
+
+        <div class="channel-card">
+
+          <div class="channel-left">
+
+            <div class="youtube-channel-avatar" id="dashboardChannelAvatar">
+              ▶
+            </div>
+
+            <div>
+              <span>MA CHAÎNE</span>
+
+              <h3 id="dashboardChannelName">
+                YouTube non connecté
+              </h3>
+
+              <p id="dashboardChannelStatus">
+                Connecte ta chaîne pour afficher tes données
+              </p>
+            </div>
+
+          </div>
+
+          <button class="connect-youtube">
+            ▶ Connecter YouTube
+          </button>
+
+        </div>
+
+
+        <div class="hero">
+
+          <div>
+
+            <span class="ai-badge">✦ POWERED BY AI</span>
+
+            <h2>
+              Une idée.<br>
+              Une vidéo.<br>
+              <span>Ton prochain succès.</span>
+            </h2>
+
+            <p>
+              De l'idée au script, du montage à l'analyse de ta chaîne.
+            </p>
+
+            <button class="primary" data-open="ideas">
+              ✦ Commencer à créer
+            </button>
+
+          </div>
+
+          <div class="ai-orb">
+            <div class="orb-core">✦</div>
+            <div class="ring ring1"></div>
+            <div class="ring ring2"></div>
+          </div>
+
+        </div>
+
+
+        <div class="stats">
+
+          <div class="stat">
+            <span>ABONNÉS</span>
+            <strong id="dashboardSubscribers">—</strong>
+            <small>YouTube</small>
+          </div>
+
+          <div class="stat">
+            <span>VUES TOTALES</span>
+            <strong id="dashboardViews">—</strong>
+            <small>YouTube</small>
+          </div>
+
+          <div class="stat">
+            <span>WATCH TIME</span>
+            <strong>—</strong>
+            <small>Analytics bientôt</small>
+          </div>
+
+          <div class="stat">
+            <span>VIDÉOS</span>
+            <strong id="dashboardVideos">—</strong>
+            <small>Publiées</small>
+          </div>
+
+        </div>
+
+
+        <h3 class="section-title">Créer avec l'IA</h3>
+
+        <div class="quick-grid">
+
+          <div class="quick-card" data-open="ideas">
+            <div>💡</div>
+            <h3>Idées</h3>
+            <p>Trouve ton prochain concept.</p>
+            <span>Créer →</span>
+          </div>
+
+          <div class="quick-card" data-open="scripts">
+            <div>🎬</div>
+            <h3>Script</h3>
+            <p>Transforme ton idée en histoire.</p>
+            <span>Écrire →</span>
+          </div>
+
+          <div class="quick-card" data-open="edits">
+            <div>✂️</div>
+            <h3>Edit</h3>
+            <p>Prépare ton montage.</p>
+            <span>Monter →</span>
+          </div>
+
+          <div class="quick-card" data-open="thumbnails">
+            <div>🖼️</div>
+            <h3>Miniature</h3>
+            <p>Imagine ton prochain visuel.</p>
+            <span>Créer →</span>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- IDEAS -->
+      <section id="ideas" class="page">
+
+        <div class="page-title">
+          <span>✦ AI CREATOR</span>
+          <h1>Générateur d'idées</h1>
+          <p>Trouve ton prochain concept YouTube.</p>
+        </div>
+
+        <div class="workspace">
+
+          <label>Sujet / niche</label>
+
+          <input
+            id="niche"
+            placeholder="Football, gaming, histoire..."
+          >
+
+          <label>Format</label>
+
+          <select id="format">
+            <option>Short YouTube</option>
+            <option>Vidéo longue</option>
+            <option>Edit</option>
+            <option>Tutoriel</option>
+            <option>Story</option>
+          </select>
+
+          <label>Style</label>
+
+          <select id="ideaStyle">
+            <option>Viral</option>
+            <option>Storytelling</option>
+            <option>Éducatif</option>
+            <option>Cinématique</option>
+            <option>Drôle</option>
+          </select>
+
+          <button class="primary" id="generateIdeas">
+            ✦ Générer les idées
+          </button>
+
+          <div class="output" id="ideasOutput">
+            ✦ Tes idées apparaîtront ici
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- SCRIPTS -->
+      <section id="scripts" class="page">
+
+        <div class="page-title">
+          <span>🎬 SCRIPT AI</span>
+          <h1>Script Studio</h1>
+          <p>Transforme ton idée en vidéo.</p>
+        </div>
+
+        <div class="workspace">
+
+          <label>Ton idée</label>
+
+          <textarea
+            id="scriptIdea"
+            placeholder="Décris ta vidéo..."
+          ></textarea>
+
+          <label>Durée</label>
+
+          <select id="duration">
+            <option>15 secondes</option>
+            <option>30 secondes</option>
+            <option>60 secondes</option>
+            <option>3 minutes</option>
+            <option>10 minutes</option>
+          </select>
+
+          <button class="primary" id="generateScript">
+            🎬 Générer le script
+          </button>
+
+          <div class="output" id="scriptOutput">
+            Ton script apparaîtra ici
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- EDITS -->
+      <section id="edits" class="page">
+
+        <div class="page-title">
+          <span>✂️ EDIT ASSISTANT</span>
+          <h1>Edit Studio</h1>
+          <p>Construis ton montage.</p>
+        </div>
+
+        <div class="workspace">
+
+          <label>Sujet</label>
+
+          <input
+            id="editSubject"
+            placeholder="Ex : Edit Lamine Yamal"
+          >
+
+          <button class="primary" id="generateEdit">
+            ✂️ Générer le montage
+          </button>
+
+          <div class="output" id="editOutput">
+            Ton plan de montage apparaîtra ici
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- THUMBNAILS -->
+      <section id="thumbnails" class="page">
+
+        <div class="page-title">
+          <span>🖼️ THUMBNAIL</span>
+          <h1>Miniature Studio</h1>
+          <p>Prépare un concept de miniature.</p>
+        </div>
+
+        <div class="workspace">
+
+          <label>Sujet</label>
+
+          <input
+            id="thumbnailSubject"
+            placeholder="Sujet de ta vidéo..."
+          >
+
+          <button class="primary" id="generateThumbnail">
+            🖼️ Créer le concept
+          </button>
+
+          <div class="output" id="thumbnailOutput">
+            Ton concept apparaîtra ici
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ANALYTICS -->
+      <section id="analytics" class="page">
+
+        <div class="page-title">
+          <span>📊 YOUTUBE ANALYTICS</span>
+          <h1>Performances</h1>
+          <p>Analyse ta chaîne YouTube.</p>
+        </div>
+
+        <div class="stats">
+
+          <div class="stat">
+            <span>ABONNÉS</span>
+            <strong id="analyticsSubscribers">—</strong>
+            <small>YouTube</small>
+          </div>
+
+          <div class="stat">
+            <span>VUES TOTALES</span>
+            <strong id="analyticsViews">—</strong>
+            <small>YouTube</small>
+          </div>
+
+          <div class="stat">
+            <span>WATCH TIME</span>
+            <strong>—</strong>
+            <small>Bientôt</small>
+          </div>
+
+          <div class="stat">
+            <span>VIDÉOS</span>
+            <strong id="analyticsVideos">—</strong>
+            <small>Publiées</small>
+          </div>
+
+        </div>
+
+        <div class="large-card">
+
+          <h3>📈 Analytics avancées</h3>
+
+          <div class="locked" id="analyticsMessage">
+            🔒 Connecte YouTube pour afficher tes statistiques.
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- VIDEOS -->
+      <section id="videos" class="page">
+
+        <div class="page-title">
+          <span>▶ YOUTUBE</span>
+          <h1>Mes vidéos</h1>
+          <p>Retrouve les vidéos de ta chaîne.</p>
+        </div>
+
+        <div class="large-card">
+
+          <div class="empty-state" id="videosState">
+            <div>🎬</div>
+            <h3>Connecte ta chaîne YouTube</h3>
+            <p>
+              Tes vidéos apparaîtront ici après la connexion.
+            </p>
+
+            <button class="primary connect-youtube">
+              ▶ Connecter YouTube
+            </button>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PROJECTS -->
+      <section id="projects" class="page">
+
+        <div class="page-title">
+          <span>📁 WORKSPACE</span>
+          <h1>Mes projets</h1>
+          <p>Organise tes prochaines vidéos.</p>
+        </div>
+
+        <button class="primary" id="createProject">
+          + Nouveau projet
+        </button>
+
+        <div id="projectList" class="project-list"></div>
+
+      </section>
+
+
+      <!-- ACCOUNT -->
+      <section id="account" class="page">
+
+        <div class="page-title">
+          <span>👤 ACCOUNT</span>
+          <h1>Mon compte</h1>
+          <p>Ton profil YT Studio AI.</p>
+        </div>
+
+        <div class="profile-card">
+
+          <div class="big-avatar" id="bigAvatar">
+            C
+          </div>
+
+          <div class="profile-details">
+
+            <h2 id="profileName">
+              Creator
+            </h2>
+
+            <p id="profileEmail">
+              Google / YouTube non connecté
+            </p>
+
+            <span class="account-status" id="accountStatus">
+              ● Hors ligne
+            </span>
+
+          </div>
+
+        </div>
+
+
+        <div class="settings-card">
+
+          <h3>▶ Chaîne YouTube</h3>
+
+          <p id="accountYoutubeStatus">
+            Aucune chaîne connectée.
+          </p>
+
+          <button class="primary connect-youtube">
+            Connecter YouTube
+          </button>
+
+        </div>
+
+
+        <div class="settings-card">
+
+          <h3>⚙️ Paramètres</h3>
+
+          <p>
+            Personnalise ton espace YT Studio AI.
+          </p>
+
+          <button class="secondary" data-open="settings">
+            Ouvrir les paramètres
+          </button>
+
+        </div>
+
+
+        <button class="danger" id="accountLogout">
+          Se déconnecter
+        </button>
+
+      </section>
+
+
+      <!-- SETTINGS -->
+      <section id="settings" class="page">
+
+        <div class="page-title">
+          <span>⚙️ SETTINGS</span>
+          <h1>Paramètres</h1>
+          <p>Personnalise ton application.</p>
+        </div>
+
+
+        <div class="settings-grid">
+
+          <div class="settings-card">
+
+            <h3>🎨 Apparence</h3>
+
+            <label>Thème</label>
+
+            <select id="themeSetting">
+              <option value="dark">Sombre</option>
+              <option value="light">Clair</option>
+              <option value="system">Système</option>
+            </select>
+
+
+            <label>Couleur principale</label>
+
+            <div class="color-picker">
+
+              <button
+                class="color-option red"
+                data-color="#ff3434"
+              ></button>
+
+              <button
+                class="color-option blue"
+                data-color="#3977ff"
+              ></button>
+
+              <button
+                class="color-option purple"
+                data-color="#8b5cf6"
+              ></button>
+
+              <button
+                class="color-option green"
+                data-color="#22c55e"
+              ></button>
+
+              <button
+                class="color-option orange"
+                data-color="#f97316"
+              ></button>
+
+            </div>
+
+
+            <label class="toggle-line">
+              Animations
+              <input
+                type="checkbox"
+                id="animationsSetting"
+                checked
+              >
+            </label>
+
+
+            <label class="toggle-line">
+              Écran de démarrage
+              <input
+                type="checkbox"
+                id="splashSetting"
+                checked
+              >
+            </label>
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <h3>👤 Profil</h3>
+
+            <label>Nom affiché</label>
+
+            <input
+              id="usernameSetting"
+              placeholder="Creator"
+            >
+
+            <p class="hint">
+              Lorsqu'une chaîne YouTube est connectée,
+              son nom et son logo sont utilisés automatiquement.
+            </p>
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <h3>✦ Préférences IA</h3>
+
+            <label>Format préféré</label>
+
+            <select id="defaultFormat">
+              <option>Short YouTube</option>
+              <option>Vidéo longue</option>
+              <option>Edit</option>
+              <option>Tutoriel</option>
+              <option>Story</option>
+            </select>
+
+
+            <label>Style préféré</label>
+
+            <select id="defaultStyle">
+              <option>Viral</option>
+              <option>Storytelling</option>
+              <option>Éducatif</option>
+              <option>Cinématique</option>
+              <option>Drôle</option>
+            </select>
+
+
+            <label>Niche principale</label>
+
+            <input
+              id="defaultNiche"
+              placeholder="Ex : Football"
+            >
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <h3>💾 Données</h3>
+
+            <label class="toggle-line">
+              Sauvegarde automatique
+              <input
+                type="checkbox"
+                id="autosaveSetting"
+                checked
+              >
+            </label>
+
+            <button class="secondary" id="resetProjects">
+              Supprimer les projets
+            </button>
+
+          </div>
+
+
+          <div class="settings-card">
+
+            <h3>▶ YouTube</h3>
+
+            <p id="settingsYoutubeStatus">
+              YouTube non connecté.
+            </p>
+
+            <button class="primary connect-youtube">
+              Connecter YouTube
+            </button>
+
+          </div>
+
+
+          <div class="settings-card danger-zone">
+
+            <h3>⚠️ Zone sensible</h3>
+
+            <button class="danger logout-action">
+              Se déconnecter
+            </button>
+
+            <button class="danger-outline" id="deleteLocalData">
+              Supprimer les données locales
+            </button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+  </div>
+
+
+  <div id="toast"></div>
+
+  <!-- GOOGLE -->
+  <script
+    src="https://accounts.google.com/gsi/client"
+    async
+    defer
+  ></script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
